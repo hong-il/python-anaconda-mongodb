@@ -23,4 +23,8 @@ conn = pymongo.MongoClient("localhost", 27017)
 db = conn.test  # Database
 col = db.members    # Collection
 
-col.insert_one(member)
+# col.insert_one(member)
+
+results = col.find({"$or": [{"age": 28}, {"address": "seoul"}]})
+for r in results:
+   print(r)
