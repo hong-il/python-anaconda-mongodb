@@ -25,6 +25,10 @@ col = db.members    # Collection
 
 # col.insert_one(member)
 
-results = col.find({"$or": [{"age": 28}, {"address": "seoul"}]})
+# results = col.find({"$or": [{"age": 28}, {"address": "seoul"}]})
+# for r in results:
+#    print(r)
+
+results = col.find({"age": {"$gte": 28, "$lt": 29}})
 for r in results:
-   print(r)
+    print(r)
