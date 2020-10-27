@@ -33,5 +33,5 @@ col = db.members    # Collection
 # for r in results:
 #     print(r)
 
-col.update_many({"name": "hong-il"}, {"$set": {"name": "hongil.kim"}})
+col.delete_one({"name": "junseok"})
 
