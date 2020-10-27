@@ -29,6 +29,12 @@ col = db.members    # Collection
 # for r in results:
 #    print(r)
 
-results = col.find({"age": {"$gte": 28, "$lt": 29}}, {"_id": False, "name": True, "address": True}).sort(-1).skip(1).limit(3)
-for r in results:
+# results = col.find({"age": {"$gte": 28, "$lt": 29}}, {"_id": False, "name": True, "address": True}).sort(-1).skip(1).limit(3)
+# for r in results:
+#     print(r)
+
+rs = col.find({"name": "hong-il"})
+for r in rs:
     print(r)
+
+col.update_one({"name": "hong-il"}, {"$set": {"name": "hongil.kim"}})
