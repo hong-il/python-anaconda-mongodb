@@ -33,8 +33,5 @@ col = db.members    # Collection
 # for r in results:
 #     print(r)
 
-rs = col.find({"name": "hong-il"})
-for r in rs:
-    print(r)
+col.update_many({"name": "hong-il"}, {"$set": {"name": "hongil.kim"}})
 
-col.update_one({"name": "hong-il"}, {"$set": {"name": "hongil.kim"}})
